@@ -2,6 +2,7 @@
   "name": "auth-service",
   "version": "1.0.0",
   "description": "The auth service is responsible for handling accounts and handing out JWTs upon successful authentication.",
+  "type": "module",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
