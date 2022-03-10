@@ -25,17 +25,18 @@ export class AccountController {
     try {
       const user = await User.authenticate(req.body.username, req.body.password)
 
+      const token = Buffer.from(process.env.ACCESS_TOKEN_SECRET, 'base64')
+
       const payload = {
         sub: user.username,
         given_name: user.firstName,
         family_name: user.lastName,
-        email: user.email,
-        x_permission_level: user.permissionLevel
+        email: user.email
       }
 
       // Create the access token with the shorter lifespan.
-      const accessToken = jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, {
-        algorithm: 'HS256',
+      const accessToken = jwt.sign(payload, token, {
+        algorithm: 'RS256',
         expiresIn: process.env.ACCESS_TOKEN_LIFE
       })
 
@@ -75,8 +76,7 @@ export class AccountController {
         password: req.body.password,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        email: req.body.email,
-        permissionLevel: 1
+        email: req.body.email
       })
 
       await user.save()

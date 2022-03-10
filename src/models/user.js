@@ -1,8 +1,8 @@
 /**
  * Mongoose model User.
  *
- * @author Mats Loock
- * @version 2.0.0
+ * @author Farzad Fahiminia <ff222cb@student.lnu.se>
+ * @version 1.0.0
  */
 
 import bcrypt from 'bcrypt'
@@ -46,8 +46,7 @@ const schema = new mongoose.Schema({
     minLength: [10, 'The password must be of minimum length 10 characters.'],
     maxLength: [256, 'The password must be of maximum length 256 characters.'],
     required: [true, 'Password is required.']
-  },
-  permissionLevel: Number
+  }
 }, {
   timestamps: true,
   toJSON: {
