@@ -1,8 +1,8 @@
 /**
  * The routes.
  *
- * @author Mats Loock
- * @version 2.0.0
+ * @author Farzad Fahiminia <ff222cb@student.lnu.se>
+ * @version 1.0.0
  */
 
 import express from 'express'
