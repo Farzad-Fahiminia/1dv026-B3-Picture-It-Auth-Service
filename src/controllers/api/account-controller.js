@@ -31,7 +31,8 @@ export class AccountController {
         sub: user.username,
         given_name: user.firstName,
         family_name: user.lastName,
-        email: user.email
+        email: user.email,
+        id: user._id
       }
 
       // Create the access token with the shorter lifespan.
