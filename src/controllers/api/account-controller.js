@@ -42,7 +42,7 @@ export class AccountController {
       })
 
       res
-        .status(201)
+        .status(200)
         .json({
           access_token: accessToken
           // refresh_token: refreshToken
